@@ -1,12 +1,21 @@
 
-const CONTENIDOS = document.getElementById("contenido_1");
-CONTENIDOS.addEventListener("click", muestraOculta);
+document.addEventListener("DOMContentLoaded", inicio);
 
-const ENLACES = document.getElementById("enlace_1")
-ENLACES.addEventListener("click", muestraOculta);
-
-
-function muestraOculta() {
-    CONTENIDOS.style.display="none";
-
+function ocultarMostrar(){
+    if(this.innerHTML === "Ocultar contenidos"){
+        document.getElementById("contenidos_" + this.id.slice(7)).style.display = "none";
+        this.innerHTML = "Mostrar contenidos";
+        return;
+    }
+    
+    document.getElementById("contenidos_" + this.id.slice(7)).style.display = "";
+    this.innerHTML = "Ocultar contenidos";
 }
+
+function inicio(){
+    let enlaces = document.getElementsByTagName("a");
+    for(let i = 0; i < enlaces.length; i++)
+        enlaces[i].addEventListener("click", ocultarMostrar);
+}
+
+
