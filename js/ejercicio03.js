@@ -11,7 +11,7 @@ function iniciar(){
     document.addEventListener("mousedown", cambiarColor);
     document.addEventListener("mousemove", moverRaton);
     document.addEventListener('mousemove', posicionCliente);
-    BODY.addEventListener("mousemove", posicionPag, false);
+    document.addEventListener("mousemove", posicionPag, false);
     document.addEventListener("keypress", presionarTecla);
 
     function posicionPag(e){
